@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Legacy</title>
+        <meta name="description" content="Aezi's Time">
+        <meta name="keywords" content="My Home, Legacy, Aezi's Home, Aezi's Legacy">
+        <meta name="author" content="Aezi">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Google Fonts and Font Awesome -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+        <!-- Conventional Style Sheets-->
+        <link rel="stylesheet" type="text/css" href="sources/bonus-fonts.css">
+        <link rel="stylesheet" type="text/css" href="real.css">
+    </head>
+    <body>
+        <div class="content">
+
+            <script>
+                // Only show loader if JS is available
+                document.body.className += ' has-js';
+                // Option 1: Hide loader after 2 seconds, in case the 'load' event never fires
+                setTimeout(function(){ document.body.className += ' loaded'; }, 1000 * 2);
+            </script>
+
+            <!-- Header -->
+            <header>
+                <h1>Welcome, Enjoy</h1>
+                <h3>Beware, Take Care Because The Freaks Come Out At Night ~ Edge 2021</h3>
+            </header>
+
+            <!-- Navigation -->
+            <div class="navbar">
+                <a href="/" class="active">Home</a>
+                <a href="https://github.com/minichest">Github</a>
+                <a href="https://twitter.com/aezl21">Twitter (Main)</a>
+                <a href="https://twitter.com/aezlo_" class="right">Twitter (Second)</a>
+                <a href="mailto:aether@aezlo.com" class="right">Email</a>
+            </div>
+
+            <!-- Two Columns -->
+            <div class="row">
+
+                <div class="column" style="background-color:white;">
+                    <h2>About Me</h2>
+                    <img src="sources/city-slight-bigger.jpg" alt="Man City"></img>
+                    <p> Supporter of The Kings Of Manchester. Sky Blue through and through. A Coder for a couple years. I sometimes enjoy Fifa Games; I also watch a bit of WWE and AEW. 
+                        I used to be interested in sports such as tennis, maybe I will watch it more again. My Main Job? Simply, it is to finish 7 & 8 Back Systems. I also own this site, lol.
+                        Any Stuff You Want Me To Add To My Site? Lob Me A DM on <a href="https://aezlo.com">Twitter</a> or <a href="aezi#0047">my discord account</a>.
+                    </p>
+                </div>
+
+                <div class="column" style="background-color:whitesmoke;">
+                    <h1 class="qto">Quotes?</h2>
+                    <div class="container">
+                        <!-- Quote to be Displayed Here -->
+                       <h1>
+                            <i class="fas fa-quote-left"></i>
+                            <span class="quote" id="quote"></span>
+                            <i class="fas fa-quote-right"></i>
+                       </h1>
+                       <!-- Author to be Displayed Here -->
+                       <p class="author" id="author"></p>
+           
+                       <hr/>
+                       <div class="buttons">
+                          <!--Button to tweet the quote -->
+                           <a class="twitter" id="tweet" href="https://twitter.com/intent/tweet?text=Greetings" data-size="large" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+           
+                           <!--Add an onclick event on 'next quote' button. Upon the click of a button, a new random quote is generated-->
+                           <button class="next" onclick="getNewQuote()">Next quote</button>
+                       </div>
+                   </div>
+                </div>
+
+            </div>
+
+            <!-- Slideshow -->
+            <center>
+                <h2 color="white">
+                    <u>My Best Edits / Designs</u>
+                </h2>
+            </center>
+            
+            <!-- Image Row 1-->
+            <div class="img-row">
+                
+                <div class="img-column">
+                  <img src="edits/dias-1.jpg" alt="Dias" style="width:100%">
+                </div>
+                
+                <div class="img-column">
+                  <img src="edits/dias-2.jpg" alt="Dias" style="width:100%">
+                </div>
+                
+                <div class="img-column">
+                  <img src="edits/dias-kdb.jpg" alt="Dias x KDB" style="width:100%">
+                </div>
+
+            </div>
+
+            <!-- Image Row 2-->
+
+            <div class="img-row">
+                
+                <div class="img-column">
+                  <img src="edits/ferran-torres.jpg" alt="Snow" style="width:100%">
+                </div>
+                
+                <div class="img-column">
+                  <img src="edits/stones-1.jpg" alt="Forest" style="width:100%">
+                </div>
+                
+                <div class="img-column">
+                  <img src="edits/stones-2.jpg" alt="Mountains" style="width:100%">
+                </div>
+            </div>
+
+        </div>
+        <!-- End Of Slideshow -->
+        </div>
+
+        <footer>
+          <h2>Live Your Way, Shine Your Light, Fight the Knights ~ © Aezi 2021</h2>
+        </footer>
+    </div>
+    <!-- Slideshow Script -->
+    <script>
+        var slideIndex = 0;
+        showSlides();
+        
+        function showSlides() {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("dot");
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          slideIndex++;
+          if (slideIndex > slides.length) {slideIndex = 1}    
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+          setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+    </script>
+    <!-- Quotes Script-->
+    <script src="quotes.js"></script>
+    <!-- End Of Code-->
+</body>
+</html>
